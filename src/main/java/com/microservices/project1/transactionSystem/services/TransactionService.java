@@ -11,4 +11,9 @@ public interface TransactionService {
     Mono<Transaction> save(Transaction transaction);
     Mono<Transaction> update(Long id, Transaction transaction);
     Mono<Void> deleteById (Long id);
+
+    Mono<String> debit(Double amount, Transaction transaction);
+    Mono<String> deposit(Double amount, Transaction transaction);
+    Mono<String> payCredit(Double amount, Transaction transaction);
+    Mono<String> useCredit(Double amount, Transaction transaction);
 }

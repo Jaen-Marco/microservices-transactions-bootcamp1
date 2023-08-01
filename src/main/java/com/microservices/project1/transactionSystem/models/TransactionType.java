@@ -5,18 +5,12 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "transactions")
-@Getter
-@Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Transaction {
-
+@Getter
+@Setter
+public class TransactionType {
     @Id private Long id;
-    private Double amount;
-    private Long idAccount;
-    private String date;
-    private TransactionType type;
+    private String nameTransaction; //Debit (1), Deposit (2), UseCredit (3), PayCredit (4)
 }
